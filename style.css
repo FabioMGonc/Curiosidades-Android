@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');/*use import para trazer fonte do google fontes*/
+
+@font-face{
+    font-family: 'Android';
+    src: url('./fontes/idroid.otf') format('opentype');
+    font-weight: normal;/*use font-face para fontes baixadas. Fontes em formato otf sao open type*/
+}
+
+:root{       
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: "Bebas Neue", cursive;
+    --fonte-android: 'Android', cursive;
+    /*Na root conseguimos determinar variaveis para a CSS, sendo elas preceditas de 
+    "--"*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+/*O "*" Aqui se torna um seletor global para todas as tags presentes nos documentos a ela linkados*/
+}
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);   
+}
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px; /*Text Indent faz o recuo do paragrafo*/
+    line-height: 1.5em;/*provoca um espaçamento entre as linhas*/
+}
+main strong{
+    color: var(--cor4);
+    font-weight: bolder;
+}
+main a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: #1a5c37;
+    background-color: #83e1ad;
+    padding: 2px 6px;
+}
+main a:hover{
+    text-decoration: underline;
+    color: #063d1e;
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor5)); /*formula do degradê*/
+    min-height: 150px; /*determina a altura minima*/
+    text-align: center;
+    padding-top: 40px; /*determinou um espaçamento no superior do titulo*/
+}
+header > h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px; /*fez uma separação abaixo do titulo e o acima do paragrafo*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.658);
+}
+header p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.3em;
+    color: white;
+    max-width: 500px; /*ao colocar um max-width transformei essa caixa em um bloco e para poder centraliza-la necessito colocar um margin: auto; para centralizar*/
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.658);
+}
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.459);
+}
+nav a{
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bolder;
+    transition-duration: 0.5s; /*gera uma transição mais lenta entre os menus de navegação*/
+}
+nav a:hover{
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+main{
+    min-width: 300px;
+    max-width: 824px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.747);
+    border-radius: 5px;
+}
+main h1{
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+}
+main h2{
+    color: var(--cor4);
+    font-family: var(--fonte-android);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+}
+main img{
+    width: 100%; /*ajuste para que as imagens se ajustem a tela*/
+}
+main img.pequena{
+    max-width: 350px;
+    display: block;
+    margin: auto;
+    /*Uma imagem necessita de display block e em seguida usar margem aauto para então centralizar*/
+}
+div.video{
+    background-color: #c5ebd6;
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 58.5%;
+    position: relative;
+}
+div.video >iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside{
+    background-color: var(--cor0);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.486);
+}
+aside h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px;/*margens negativas fazem ela crescer para fora*/
+    border-radius: 10px 10px 0px 0px;
+}
+aside > ul{
+    list-style-type: '\2714\00a0\00a0';/*\2714 esse é o codigo do V na emojipedia antecedido de \. já 00A0 é o codigo de espaçamento entre o emijo e o conteudo. Isto não é compativel com todos navegadores*/
+    list-style-position: inside; /*quando usado a bolinha da lista vem para o lado de dentro da caixa*/
+    columns: 2; /*divide o conteudo das listas em duas colunas*/
+
+}
+footer{
+    color: white;
+    background-color: var(--cor5);
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
